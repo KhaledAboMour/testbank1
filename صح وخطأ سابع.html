@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار صح وخطأ – الصف السابع</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Cairo',Tahoma,sans-serif;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);
+  background-size:400% 400%;
+  animation:gradientShift 15s ease infinite;
+  min-height:100vh;
+  padding:20px 0;
+}
+
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+  animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.card{
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  border-radius:24px;
+  padding:35px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2),0 0 0 1px rgba(255,255,255,0.1);
+  margin-top:20px;
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:linear-gradient(90deg,#667eea,#764ba2,#f093fb);
+  background-size:200% 100%;
+  animation:shimmer 3s linear infinite;
+}
+
+@keyframes shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 70px rgba(0,0,0,0.25);
+}
+
+.hidden{display:none}
+
+h1{
+  text-align:center;
+  color:#2d3748;
+  font-size:2.5em;
+  margin:0 0 10px 0;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  font-weight:700;
+  text-shadow:0 2px 10px rgba(102,126,234,0.2);
+}
+
+h2{
+  text-align:center;
+  color:#4a5568;
+  font-size:1.5em;
+  margin:15px 0;
+  font-weight:600;
+}
+
+#unit{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  display:inline-block;
+  margin:0 auto 20px;
+  font-size:1.1em;
+  box-shadow:0 4px 15px rgba(102,126,234,0.3);
+}
+
+#studentTitle{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  display:inline-block;
+  margin:0 auto 20px;
+  font-size:1.1em;
+  box-shadow:0 4px 15px rgba(102,126,234,0.3);
+}
+
+input{
+  width:100%;
+  padding:16px 20px;
+  font-size:18px;
+  border-radius:12px;
+  border:2px solid #e2e8f0;
+  margin-top:15px;
+  transition:all 0.3s ease;
+  font-family:'Cairo',Tahoma,sans-serif;
+  background:#fff;
+}
+
+input:focus{
+  outline:none;
+  border-color:#667eea;
+  box-shadow:0 0 0 4px rgba(102,126,234,0.1);
+  transform:scale(1.02);
+}
+
+button{
+  width:100%;
+  padding:18px;
+  font-size:18px;
+  font-weight:700;
+  border:none;
+  border-radius:12px;
+  margin-top:20px;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  color:#fff;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 8px 20px rgba(102,126,234,0.4);
+  position:relative;
+  overflow:hidden;
+  font-family:'Cairo',Tahoma,sans-serif;
+}
+
+button::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  transform:translate(-50%,-50%);
+  transition:width 0.6s,height 0.6s;
+}
+
+button:hover::before{
+  width:300px;
+  height:300px;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(102,126,234,0.5);
+}
+
+button:active{
+  transform:translateY(-1px);
+}
+
+.choice{
+  display:flex;
+  gap:20px;
+  margin-top:25px;
+}
+
+.choice div{
+  flex:1;
+  text-align:center;
+  padding:22px;
+  font-size:20px;
+  font-weight:600;
+  border-radius:14px;
+  border:2px solid #e2e8f0;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.choice div::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#667eea,#764ba2);
+  transition:width 0.3s ease;
+  z-index:0;
+}
+
+.choice div:hover{
+  border-color:#667eea;
+  transform:translateY(-3px);
+  box-shadow:0 5px 15px rgba(102,126,234,0.2);
+}
+
+.choice div:hover::before{
+  width:5px;
+}
+
+.choice .correct{
+  background:linear-gradient(135deg,#10b981,#059669);
+  border-color:#10b981;
+  color:#fff;
+  transform:scale(1.02);
+  box-shadow:0 5px 20px rgba(16,185,129,0.4);
+  animation:correctPulse 0.5s ease;
+}
+
+@keyframes correctPulse{
+  0%,100%{transform:scale(1.02)}
+  50%{transform:scale(1.05)}
+}
+
+.choice .wrong{
+  background:linear-gradient(135deg,#ef4444,#dc2626);
+  border-color:#ef4444;
+  color:#fff;
+  transform:scale(1.02);
+  box-shadow:0 5px 20px rgba(239,68,68,0.4);
+  animation:wrongShake 0.5s ease;
+}
+
+@keyframes wrongShake{
+  0%,100%{transform:translateX(0) scale(1.02)}
+  25%{transform:translateX(-5px) scale(1.02)}
+  75%{transform:translateX(5px) scale(1.02)}
+}
+
+.progress{
+  background:#e2e8f0;
+  height:16px;
+  border-radius:20px;
+  overflow:hidden;
+  margin:20px 0;
+  box-shadow:inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#667eea,#764ba2,#f093fb);
+  background-size:200% 100%;
+  border-radius:20px;
+  transition:width 0.5s ease;
+  animation:progressShimmer 2s linear infinite;
+  box-shadow:0 2px 10px rgba(102,126,234,0.5);
+}
+
+@keyframes progressShimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+
+#counter{
+  text-align:center;
+  color:#718096;
+  font-size:16px;
+  font-weight:600;
+  margin:10px 0;
+}
+
+#question{
+  color:#2d3748;
+  line-height:1.8;
+  margin:25px 0;
+  font-size:1.3em;
+  font-weight:600;
+}
+
+.result{
+  text-align:center;
+  font-size:22px;
+  padding:30px;
+  background:linear-gradient(135deg,#f7fafc,#edf2f7);
+  border-radius:16px;
+  margin:20px 0;
+}
+
+.result b{
+  color:#667eea;
+  font-size:1.2em;
+}
+
+p{
+  text-align:center;
+  color:#4a5568;
+  font-size:18px;
+  margin:10px 0;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- شاشة البداية -->
+<div id="start" class="card">
+  <h1>📚 اختبار الحاسوب – صح / خطأ</h1>
+  <p style="text-align:center;font-size:18px;color:#4a5568">أدخل اسم الطالب للبدء</p>
+  <input id="studentName" placeholder="✍️ اسم الطالب">
+  <button onclick="startQuiz()">🚀 بدء الاختبار</button>
+</div>
+
+<!-- شاشة الأسئلة -->
+<div id="quiz" class="card hidden">
+  <h2 id="studentTitle"></h2>
+  <p id="unit"></p>
+  <div class="progress"><div id="bar" class="progress-bar"></div></div>
+  <p id="counter"></p>
+  <h2 id="question"></h2>
+  <div class="choice">
+    <div id="trueBtn" onclick="answer(true)">✅ صح</div>
+    <div id="falseBtn" onclick="answer(false)">❌ خطأ</div>
+  </div>
+  <button id="nextBtn" class="hidden" onclick="nextQ()">التالي</button>
+</div>
+
+<!-- شاشة النتيجة -->
+<div id="result" class="card hidden">
+  <h1>🎉 انتهى الاختبار</h1>
+  <div id="final" class="result"></div>
+  <button onclick="location.reload()">🔄 إعادة الاختبار</button>
+</div>
+
+</div>
+
+<script>
+    const questions = [
+    /* ===== الوحدة الأولى ===== */
+    {u:"الوحدة الأولى",q:"التكنولوجيا تعني استخدام الأدوات والوسائل لتسهيل حياة الإنسان",a:true},
+    {u:"الوحدة الأولى",q:"التكنولوجيا تقتصر فقط على أجهزة الحاسوب",a:false},
+    {u:"الوحدة الأولى",q:"يستخدم الحاسوب في مجال التعليم",a:true},
+    {u:"الوحدة الأولى",q:"لا دور للتكنولوجيا في المجال الطبي",a:false},
+    {u:"الوحدة الأولى",q:"من فوائد التكنولوجيا توفير الوقت والجهد",a:true},
+    {u:"الوحدة الأولى",q:"استخدام الهاتف الذكي مثال على استخدام التكنولوجيا",a:true},
+    {u:"الوحدة الأولى",q:"التكنولوجيا لا تؤثر في تطور المجتمع",a:false},
+    {u:"الوحدة الأولى",q:"الحاسوب أداة من أدوات التكنولوجيا",a:true},
+    {u:"الوحدة الأولى",q:"لا يمكن استخدام التكنولوجيا في التجارة",a:false},
+    {u:"الوحدة الأولى",q:"تساعد التكنولوجيا في تسريع إنجاز الأعمال",a:true},
+    {u:"الوحدة الأولى",q:"استخدام الحاسوب في البحث مثال على استخدام التكنولوجيا في التعليم",a:true},
+    {u:"الوحدة الأولى",q:"الترفيه ليس من مجالات استخدام التكنولوجيا",a:false},
+    {u:"الوحدة الأولى",q:"التكنولوجيا الحديثة تعتمد على العلم",a:true},
+    {u:"الوحدة الأولى",q:"يمكن الاستغناء عن التكنولوجيا في الحياة اليومية",a:false},
+    {u:"الوحدة الأولى",q:"الحاسوب يسهل تخزين المعلومات",a:true},
+    {u:"الوحدة الأولى",q:"استخدام الإنترنت لا يعد استخدامًا للتكنولوجيا",a:false},
+    {u:"الوحدة الأولى",q:"التكنولوجيا تشمل الأجهزة والبرامج معًا",a:true},
+    {u:"الوحدة الأولى",q:"لا يوجد للتكنولوجيا أي سلبيات",a:false},
+    {u:"الوحدة الأولى",q:"تساعد التكنولوجيا في التواصل بين الناس",a:true},
+    {u:"الوحدة الأولى",q:"مشاهدة الدروس عبر الإنترنت مثال على استخدام التكنولوجيا",a:true},
+    
+    /* ===== الوحدة الثانية ===== */
+    {u:"الوحدة الثانية",q:"تكنولوجيا المعلومات تهتم بمعالجة البيانات وتحويلها إلى معلومات",a:true},
+    {u:"الوحدة الثانية",q:"البيانات هي معلومات تمت معالجتها",a:false},
+    {u:"الوحدة الثانية",q:"المعلومات ناتجة عن معالجة البيانات",a:true},
+    {u:"الوحدة الثانية",q:"الأرقام والحروف تعتبر بيانات",a:true},
+    {u:"الوحدة الثانية",q:"الحاسوب جهاز إلكتروني يعالج البيانات",a:true},
+    {u:"الوحدة الثانية",q:"الحاسوب يفهم لغة البشر مباشرة",a:false},
+    {u:"الوحدة الثانية",q:"مخطط عمل الحاسوب يتكون من إدخال ومعالجة وإخراج وتخزين",a:true},
+    {u:"الوحدة الثانية",q:"المعالجة تتم قبل الإدخال",a:false},
+    {u:"الوحدة الثانية",q:"لوحة المفاتيح من وحدات الإدخال",a:true},
+    {u:"الوحدة الثانية",q:"الشاشة من وحدات الإخراج",a:true},
+    {u:"الوحدة الثانية",q:"الطابعة من وحدات الإدخال",a:false},
+    {u:"الوحدة الثانية",q:"الفأرة وحدة إخراج",a:false},
+    {u:"الوحدة الثانية",q:"المعالج مسؤول عن تنفيذ العمليات الحسابية والمنطقية",a:true},
+    {u:"الوحدة الثانية",q:"التخزين مرحلة غير مهمة في عمل الحاسوب",a:false},
+    {u:"الوحدة الثانية",q:"المكونات المادية هي الأجزاء الملموسة للحاسوب",a:true},
+    {u:"الوحدة الثانية",q:"البرامج تعتبر مكونات مادية",a:false},
+    {u:"الوحدة الثانية",q:"نظام التشغيل من المكونات البرمجية",a:true},
+    {u:"الوحدة الثانية",q:"لا يعمل الحاسوب دون مكونات برمجية",a:true},
+    {u:"الوحدة الثانية",q:"البيانات وحدها لا تكون ذات معنى",a:true},
+    {u:"الوحدة الثانية",q:"المعلومات تساعد المستخدم على اتخاذ القرار",a:true},
+    
+    /* ===== الوحدة الثالثة ===== */
+    {u:"الوحدة الثالثة",q:"لوحة المفاتيح مثال على وحدة إدخال",a:true},
+    {u:"الوحدة الثالثة",q:"السماعات مثال على وحدة إخراج",a:true},
+    {u:"الوحدة الثالثة",q:"وحدة المعالجة المركزية تسمى عقل الحاسوب",a:true},
+    {u:"الوحدة الثالثة",q:"المعالج مسؤول عن تخزين البيانات بشكل دائم",a:false},
+    {u:"الوحدة الثالثة",q:"الذاكرة RAM تفقد محتواها عند إطفاء الحاسوب",a:true},
+    {u:"الوحدة الثالثة",q:"الذاكرة ROM يمكن الكتابة عليها",a:false},
+    {u:"الوحدة الثالثة",q:"القرص الصلب من وحدات التخزين الثانوية",a:true},
+    {u:"الوحدة الثالثة",q:"الفلاش ميموري من وحدات التخزين",a:true},
+    {u:"الوحدة الثالثة",q:"اللوحة الأم تربط جميع مكونات الحاسوب",a:true},
+    {u:"الوحدة الثالثة",q:"لا يمكن تركيب المعالج على اللوحة الأم",a:false},
+    {u:"الوحدة الثالثة",q:"المنافذ تستخدم لتوصيل الأجهزة بالحاسوب",a:true},
+    {u:"الوحدة الثالثة",q:"منفذ USB يستخدم لتوصيل عدة أجهزة",a:true},
+    {u:"الوحدة الثالثة",q:"الشاشة تتصل بالحاسوب عبر منفذ عرض",a:true},
+    {u:"الوحدة الثالثة",q:"المنافذ جزء من المكونات البرمجية",a:false},
+    {u:"الوحدة الثالثة",q:"الذاكرة الرئيسية أسرع من التخزين الثانوي",a:true},
+    {u:"الوحدة الثالثة",q:"القرص الليزري من وحدات الإدخال",a:false},
+    {u:"الوحدة الثالثة",q:"الطابعة من وحدات الإخراج",a:true},
+    {u:"الوحدة الثالثة",q:"الكاميرا الرقمية وحدة إدخال",a:true},
+    {u:"الوحدة الثالثة",q:"وحدة التخزين غير ضرورية للحاسوب",a:false},
+    {u:"الوحدة الثالثة",q:"اللوحة الأم تحتوي على منافذ داخلية وخارجية",a:true},
+    
+    /* ===== الوحدة الرابعة ===== */
+    {u:"الوحدة الرابعة",q:"النظام العشري يتكون من الأرقام من 0 إلى 9",a:true},
+    {u:"الوحدة الرابعة",q:"أساس النظام العشري هو 2",a:false},
+    {u:"الوحدة الرابعة",q:"النظام الثنائي يتكون من الرقمين 0 و1",a:true},
+    {u:"الوحدة الرابعة",q:"الحاسوب يستخدم النظام العشري في عمله الداخلي",a:false},
+    {u:"الوحدة الرابعة",q:"النظام الثنائي يعتمد على الإشارات الكهربائية",a:true},
+    {u:"الوحدة الرابعة",q:"الصيغة التفصيلية تبين قيمة كل منزلة",a:true},
+    {u:"الوحدة الرابعة",q:"يمكن تحويل عدد عشري إلى ثنائي",a:true},
+    {u:"الوحدة الرابعة",q:"لا يمكن تحويل عدد ثنائي إلى عشري",a:false},
+    {u:"الوحدة الرابعة",q:"العدد (101)₂ يكتب بالنظام الثنائي",a:true},
+    {u:"الوحدة الرابعة",q:"العدد (10)₁₀ مكتوب بالنظام العشري",a:true},
+    {u:"الوحدة الرابعة",q:"كل منزلة في النظام الثنائي تمثل قوة للعدد 2",a:true},
+    {u:"الوحدة الرابعة",q:"النظام الثنائي أساسه 10",a:false},
+    {u:"الوحدة الرابعة",q:"يستخدم الإنسان النظام العشري في حياته اليومية",a:true},
+    {u:"الوحدة الرابعة",q:"يستخدم الحاسوب النظام الثنائي فقط",a:true},
+    {u:"الوحدة الرابعة",q:"الصيغة التفصيلية تستخدم فقط في النظام الثنائي",a:false},
+    {u:"الوحدة الرابعة",q:"يمكن التحقق من صحة التحويل بين الأنظمة",a:true},
+    {u:"الوحدة الرابعة",q:"الأعداد الثنائية لا تحتوي الرقم 2",a:true},
+    {u:"الوحدة الرابعة",q:"التحويل بين الأنظمة يفيد في فهم عمل الحاسوب",a:true},
+    {u:"الوحدة الرابعة",q:"النظام العشري غير مهم للحاسوب",a:false},
+    {u:"الوحدة الرابعة",q:"الصيغة التفصيلية تساعد في التحويل بين الأنظمة",a:true},
+    
+    /* ===== الوحدة الخامسة ===== */
+    {u:"الوحدة الخامسة",q:"البرمجيات الخبيثة برامج تهدف لإلحاق الضرر بالحاسوب",a:true},
+    {u:"الوحدة الخامسة",q:"الفيروس نوع من البرمجيات الخبيثة",a:true},
+    {u:"الوحدة الخامسة",q:"الدودة الحاسوبية لا تنتشر عبر الشبكات",a:false},
+    {u:"الوحدة الخامسة",q:"حصان طروادة برنامج مفيد",a:false},
+    {u:"الوحدة الخامسة",q:"البرمجيات الخبيثة قد تبطئ عمل الحاسوب",a:true},
+    {u:"الوحدة الخامسة",q:"فتح ملفات مجهولة قد ينقل فيروسات",a:true},
+    {u:"الوحدة الخامسة",q:"وسائط التخزين قد تنقل البرمجيات الخبيثة",a:true},
+    {u:"الوحدة الخامسة",q:"الإنترنت وسيلة من وسائل انتقال الفيروسات",a:true},
+    {u:"الوحدة الخامسة",q:"لا يمكن الوقاية من البرمجيات الخبيثة",a:false},
+    {u:"الوحدة الخامسة",q:"تثبيت برنامج مضاد فيروسات يساعد في الحماية",a:true},
+    {u:"الوحدة الخامسة",q:"تحديث مضاد الفيروسات أمر غير ضروري",a:false},
+    {u:"الوحدة الخامسة",q:"النسخ الاحتياطي يحمي البيانات من الضياع",a:true},
+    {u:"الوحدة الخامسة",q:"الجدار الناري يمنع الدخول غير المصرح به",a:true},
+    {u:"الوحدة الخامسة",q:"التشفير يجعل البيانات أكثر أمانًا",a:true},
+    {u:"الوحدة الخامسة",q:"كلمة المرور القوية تحمي الملفات",a:true},
+    {u:"الوحدة الخامسة",q:"مشاركة كلمة المرور سلوك آمن",a:false},
+    {u:"الوحدة الخامسة",q:"البطء المفاجئ قد يدل على إصابة الجهاز",a:true},
+    {u:"الوحدة الخامسة",q:"يمكن حذف البرمجيات الخبيثة يدويًا دائمًا",a:false},
+    {u:"الوحدة الخامسة",q:"حماية الملفات مسؤولية المستخدم فقط",a:false},
+    {u:"الوحدة الخامسة",q:"الالتزام بالسلوك الصحيح يقلل خطر الإصابة",a:true}
+    ];
+    
+
+let i=0,score=0,name="";
+
+function startQuiz(){
+ name=document.getElementById("studentName").value.trim();
+ if(!name){alert("أدخل اسم الطالب");return;}
+ document.getElementById("start").classList.add("hidden");
+ document.getElementById("quiz").classList.remove("hidden");
+ document.getElementById("studentTitle").innerText="الطالب: "+name;
+ showQ();
+}
+
+function showQ(){
+ let q=questions[i];
+ document.getElementById("unit").innerText=q.u;
+ document.getElementById("question").innerText=q.q;
+ document.getElementById("counter").innerText=`📝 سؤال ${i+1} من ${questions.length}`;
+ document.getElementById("bar").style.width=((i+1)/questions.length*100)+"%";
+ document.getElementById("trueBtn").className="";
+ document.getElementById("falseBtn").className="";
+ document.getElementById("nextBtn").classList.add("hidden");
+}
+
+function answer(val){
+ let q=questions[i];
+ document.getElementById("trueBtn").onclick=null;
+ document.getElementById("falseBtn").onclick=null;
+
+ if(val===q.a){
+  score++;
+  (val?trueBtn:falseBtn).classList.add("correct");
+ }else{
+  (val?trueBtn:falseBtn).classList.add("wrong");
+  (q.a?trueBtn:falseBtn).classList.add("correct");
+ }
+ document.getElementById("nextBtn").classList.remove("hidden");
+}
+
+function nextQ(){
+ document.getElementById("trueBtn").onclick=()=>answer(true);
+ document.getElementById("falseBtn").onclick=()=>answer(false);
+ i++;
+ if(i<questions.length) showQ();
+ else showResult();
+}
+
+function showResult(){
+ document.getElementById("quiz").classList.add("hidden");
+ document.getElementById("result").classList.remove("hidden");
+ let percent=Math.round(score/questions.length*100);
+ localStorage.setItem("tf_"+name,JSON.stringify({name,score,percent}));
+ let emoji=percent>=90?'🏆':percent>=70?'⭐':percent>=50?'👍':'💪';
+ document.getElementById("final").innerHTML=
+ `<div style="font-size:4em;margin-bottom:20px">${emoji}</div>
+  <div style="margin:15px 0"><span style="color:#718096">اسم الطالب:</span> <b>${name}</b></div>
+  <div style="margin:15px 0"><span style="color:#718096">النتيجة:</span> <b>${score} / ${questions.length}</b></div>
+  <div style="margin:15px 0"><span style="color:#718096">النسبة:</span> <b style="font-size:1.3em;color:${percent>=70?'#10b981':'#ef4444'}">${percent}%</b></div>`;
+}
+</script>
+
+</body>
+</html>
