@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملفات - المكتبة التعليمية</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .file-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+        }
+
+        .file-icon {
+            font-size: 64px;
+            color: #3498db;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .file-card h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .file-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .file-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .file-card a:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            .files-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .file-card {
+                padding: 20px;
+            }
+
+            .file-icon {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📁 الملفات التعليمية</h1>
+            <p>مكتبة شاملة للمحتوى التعليمي</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <a href="index.html" class="back-button">← العودة للصفحة الرئيسية</a>
+                <h2>المحتوى التعليمي المتاح</h2>
+                <p>اختر المحتوى الذي تريد الوصول إليه من القائمة أدناه</p>
+            </div>
+
+            <div class="files-grid">
+                <div class="file-card">
+                    <span class="file-icon">📄</span>
+                    <h3>ملفات PDF</h3>
+                    <div class="file-info">
+                        المكتبة التعليمية تحتوي على ملفات PDF<br>
+                        للتحميل والعرض لجميع الصفوف
+                    </div>
+                    <a href="ملفات-pdf.html">عرض ملفات PDF</a>
+                </div>
+
+                <div class="file-card">
+                    <span class="file-icon">📝</span>
+                    <h3>اختبارات الصف السابع</h3>
+                    <div class="file-info">
+                        اختبارات متنوعة للصف السابع الأساسي<br>
+                        شاملة اختيار من متعدد وصح وخطأ
+                    </div>
+                    <a href="اختر الاجابة الصحيحة سابع.html">بدء الاختبار</a>
+                </div>
+
+                <div class="file-card">
+                    <span class="file-icon">📖</span>
+                    <h3>مراجعة الصف الثامن</h3>
+                    <div class="file-info">
+                        صفحة مراجعة شاملة للصف الثامن<br>
+                        تحتوي على جميع المواد المطلوبة
+                    </div>
+                    <a href="مراجعة ثامن.html">بدء المراجعة</a>
+                </div>
+
+                <div class="file-card">
+                    <span class="file-icon">✏️</span>
+                    <h3>اختبارات الصف التاسع</h3>
+                    <div class="file-info">
+                        اختبارات متنوعة للصف التاسع الأساسي<br>
+                        تغطي جميع المواد الدراسية
+                    </div>
+                    <a href="التاسع.html">بدء الاختبار</a>
+                </div>
+
+                <div class="file-card">
+                    <span class="file-icon">⚙️</span>
+                    <h3>نظام إدارة الاختبارات</h3>
+                    <div class="file-info">
+                        النظام الرئيسي لإدارة وبناء الاختبارات<br>
+                        مع جميع المميزات المتقدمة
+                    </div>
+                    <a href="نظام-إدارة-وبناء-الاختبارات-الإلكترونية.html">الدخول إلى النظام</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 المكتبة التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+</body>
+
+</html>
