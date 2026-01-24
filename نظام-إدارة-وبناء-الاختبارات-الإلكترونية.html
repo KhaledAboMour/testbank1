@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
@@ -14,7 +15,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -24,33 +25,33 @@
             color: #333;
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 10px auto;
             background-color: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
             padding: 20px 15px;
             text-align: center;
         }
-        
+
         .header h1 {
             font-size: 22px;
             margin-bottom: 8px;
         }
-        
+
         .header p {
             font-size: 14px;
             opacity: 0.9;
         }
-        
+
         .tabs {
             display: flex;
             background: #34495e;
@@ -59,11 +60,11 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-        
+
         .tabs::-webkit-scrollbar {
             display: none;
         }
-        
+
         .tab {
             padding: 12px 18px;
             cursor: pointer;
@@ -75,26 +76,26 @@
             flex-shrink: 0;
             font-size: 14px;
         }
-        
+
         .tab:hover {
             background: #2c3e50;
         }
-        
+
         .tab.active {
             background: #2c3e50;
             border-bottom: 3px solid #3498db;
         }
-        
+
         .tab-content {
             display: none;
             padding: 15px;
             min-height: 400px;
         }
-        
+
         .tab-content.active {
             display: block;
         }
-        
+
         .form-section {
             background: #f8f9fa;
             padding: 15px;
@@ -102,7 +103,7 @@
             margin-bottom: 15px;
             border-right: 4px solid #3498db;
         }
-        
+
         .form-section h3 {
             color: #2c3e50;
             margin-bottom: 15px;
@@ -110,26 +111,26 @@
             border-bottom: 1px solid #ddd;
             font-size: 18px;
         }
-        
+
         .form-section h4 {
             font-size: 16px;
             margin: 15px 0 10px 0;
             color: #2c3e50;
         }
-        
+
         .form-row {
             display: flex;
             gap: 15px;
             margin-bottom: 15px;
             flex-wrap: wrap;
         }
-        
+
         .form-group {
             flex: 1;
             margin-bottom: 15px;
             min-width: 100%;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 6px;
@@ -137,8 +138,10 @@
             color: #2c3e50;
             font-size: 14px;
         }
-        
-        .form-group input, .form-group select, .form-group textarea {
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
@@ -148,40 +151,42 @@
             -webkit-appearance: none;
             appearance: none;
         }
-        
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             border-color: #3498db;
             box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
             outline: none;
         }
-        
+
         .form-group textarea {
             min-height: 100px;
             resize: vertical;
         }
-        
+
         .options-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 12px;
             margin-bottom: 15px;
         }
-        
+
         .question-card {
             background: white;
             border: 1px solid #e1e8ed;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
         }
-        
+
         .question-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
-        
+
         .question-header {
             display: flex;
             justify-content: space-between;
@@ -192,18 +197,18 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-        
+
         .question-header h4 {
             font-size: 16px;
             margin: 0;
         }
-        
+
         .question-actions {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
         }
-        
+
         button {
             background-color: #3498db;
             color: white;
@@ -218,51 +223,56 @@
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }
-        
-        button:hover, button:active {
+
+        button:hover,
+        button:active {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+
         button:disabled {
             background-color: #bdc3c7;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-        
+
         .btn-success {
             background-color: #2ecc71;
         }
-        
-        .btn-success:hover, .btn-success:active {
+
+        .btn-success:hover,
+        .btn-success:active {
             background-color: #27ae60;
         }
-        
+
         .btn-warning {
             background-color: #f39c12;
         }
-        
-        .btn-warning:hover, .btn-warning:active {
+
+        .btn-warning:hover,
+        .btn-warning:active {
             background-color: #e67e22;
         }
-        
+
         .btn-danger {
             background-color: #e74c3c;
         }
-        
-        .btn-danger:hover, .btn-danger:active {
+
+        .btn-danger:hover,
+        .btn-danger:active {
             background-color: #c0392b;
         }
-        
+
         .btn-info {
             background-color: #17a2b8;
         }
-        
-        .btn-info:hover, .btn-info:active {
+
+        .btn-info:hover,
+        .btn-info:active {
             background-color: #138496;
         }
-        
+
         .center-buttons {
             text-align: center;
             margin-top: 20px;
@@ -270,19 +280,19 @@
             flex-direction: column;
             gap: 10px;
         }
-        
+
         .center-buttons button {
             width: 100%;
         }
-        
+
         .quiz-container {
             background: white;
             border-radius: 10px;
             padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .quiz-question {
             margin-bottom: 25px;
             padding: 20px;
@@ -290,7 +300,7 @@
             border-radius: 8px;
             background: #f8f9fa;
         }
-        
+
         .question-text {
             font-size: 16px;
             margin-bottom: 15px;
@@ -298,7 +308,7 @@
             font-weight: bold;
             line-height: 1.5;
         }
-        
+
         .quiz-option {
             margin: 10px 0;
             padding: 14px;
@@ -312,12 +322,13 @@
             min-height: 48px;
             touch-action: manipulation;
         }
-        
-        .quiz-option:hover, .quiz-option:active {
+
+        .quiz-option:hover,
+        .quiz-option:active {
             background: #e8f4fc;
             border-color: #3498db;
         }
-        
+
         .quiz-option input {
             margin-left: 10px;
             margin-right: 10px;
@@ -325,19 +336,19 @@
             height: 20px;
             cursor: pointer;
         }
-        
+
         .option-text {
             flex-grow: 1;
             font-size: 15px;
         }
-        
+
         .progress-container {
             background: #ecf0f1;
             border-radius: 8px;
             margin: 15px 0;
             height: 10px;
         }
-        
+
         .progress-bar {
             height: 100%;
             background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
@@ -345,14 +356,14 @@
             width: 0%;
             transition: width 0.5s;
         }
-        
+
         .progress-text {
             text-align: center;
             margin-top: 10px;
             font-size: 13px;
             color: #7f8c8d;
         }
-        
+
         .score-card {
             background: linear-gradient(135deg, #1a5276 0%, #154360 100%);
             color: white;
@@ -360,41 +371,41 @@
             border-radius: 10px;
             margin: 15px 0;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .score {
             font-size: 36px;
             font-weight: bold;
             margin: 12px 0;
         }
-        
+
         .grade {
             font-size: 20px;
             margin: 8px 0;
         }
-        
+
         .student-info {
             font-size: 16px;
             margin: 8px 0;
             color: #f1c40f;
         }
-        
+
         .questions-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 15px;
             margin-top: 15px;
         }
-        
+
         .preview-card {
             background: white;
             border: 1px solid #e1e8ed;
             border-radius: 8px;
             padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .preview-card h4 {
             color: #2c3e50;
             margin-bottom: 12px;
@@ -402,12 +413,12 @@
             border-bottom: 1px solid #eee;
             font-size: 16px;
         }
-        
+
         .correct-option {
             background: #d4edda;
             border: 1px solid #c3e6cb;
         }
-        
+
         .code-block {
             background: #2c3e50;
             color: white;
@@ -421,19 +432,19 @@
             overflow-y: auto;
             font-size: 12px;
         }
-        
+
         .empty-state {
             text-align: center;
             padding: 30px 15px;
             color: #7f8c8d;
         }
-        
+
         .empty-state i {
             font-size: 40px;
             margin-bottom: 12px;
             display: block;
         }
-        
+
         .alert {
             padding: 12px;
             border-radius: 5px;
@@ -441,19 +452,19 @@
             font-weight: bold;
             font-size: 14px;
         }
-        
+
         .alert-error {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
-        
+
         .alert-success {
             background-color: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
         }
-        
+
         .timer {
             font-size: 16px;
             font-weight: bold;
@@ -465,7 +476,7 @@
             border-radius: 8px;
             border: 2px solid #e74c3c;
         }
-        
+
         .teacher-signature {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
@@ -481,7 +492,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .teacher-signature::before {
             content: '';
             position: absolute;
@@ -489,25 +500,30 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             animation: shimmer 3s infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .teacher-signature .school-name {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
             position: relative;
             z-index: 1;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             letter-spacing: 1px;
         }
-        
+
         .teacher-signature .school-message {
             font-size: 14px;
             opacity: 0.95;
@@ -516,7 +532,7 @@
             line-height: 1.8;
             font-style: italic;
         }
-        
+
         /* تحسين الـ checkboxes للموبايل */
         .form-group label {
             display: flex;
@@ -528,11 +544,11 @@
             transition: background 0.2s;
             -webkit-tap-highlight-color: transparent;
         }
-        
+
         .form-group label:hover {
             background: rgba(52, 152, 219, 0.1);
         }
-        
+
         .form-group label input[type="checkbox"] {
             width: 24px;
             height: 24px;
@@ -540,101 +556,101 @@
             margin: 0;
             flex-shrink: 0;
         }
-        
+
         .form-group label:has(input[type="checkbox"]) {
             margin-bottom: 0;
         }
-        
+
         /* تحسينات للموبايل */
         @media (min-width: 480px) {
             body {
                 padding: 15px;
             }
-            
+
             .form-group {
                 min-width: calc(50% - 7.5px);
             }
-            
+
             .options-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            
+
             .center-buttons {
                 flex-direction: row;
             }
-            
+
             .center-buttons button {
                 width: auto;
                 flex: 1;
             }
         }
-        
+
         @media (min-width: 768px) {
             body {
                 padding: 20px;
             }
-            
+
             .header {
                 padding: 25px;
             }
-            
+
             .header h1 {
                 font-size: 28px;
             }
-            
+
             .header p {
                 font-size: 16px;
             }
-            
+
             .tab {
                 padding: 15px 25px;
                 font-size: 16px;
             }
-            
+
             .tab-content {
                 padding: 30px;
             }
-            
+
             .form-section {
                 padding: 25px;
             }
-            
+
             .form-section h3 {
                 font-size: 20px;
             }
-            
+
             .form-group {
                 min-width: auto;
             }
-            
+
             .question-text {
                 font-size: 18px;
             }
-            
+
             .score {
                 font-size: 48px;
             }
-            
+
             .grade {
                 font-size: 24px;
             }
-            
+
             .questions-grid {
                 grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             }
         }
-        
+
         @media (max-width: 479px) {
             .question-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .question-actions {
                 width: 100%;
                 justify-content: space-between;
             }
-            
+
             .question-actions button {
                 flex: 1;
                 font-size: 14px;
@@ -644,19 +660,20 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>نظام إدارة وبناء الاختبارات الإلكترونية </h1>
             <p>أداة متكاملة لإنشاء وإدارة الاختبارات الإلكترونية</p>
         </div>
-        
+
         <div class="tabs">
             <div class="tab active" data-tab="create">إنشاء الأسئلة</div>
             <div class="tab" data-tab="preview">معاينة الأسئلة</div>
             <div class="tab" data-tab="export">تصدير الاختبار</div>
         </div>
-        
+
         <!-- تبويب إنشاء الأسئلة -->
         <div id="create" class="tab-content active">
             <div class="form-section">
@@ -666,7 +683,7 @@
                     <label for="question-text">نص السؤال:</label>
                     <textarea id="question-text" placeholder="أدخل نص السؤال هنا..."></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="question-type">نوع السؤال:</label>
                     <select id="question-type">
@@ -674,12 +691,13 @@
                         <option value="tf">سؤال صح / خطأ</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="question-points">درجة السؤال:</label>
-                    <input type="number" id="question-points" placeholder="أدخل درجة السؤال" value="1" min="1" max="100">
+                    <input type="number" id="question-points" placeholder="أدخل درجة السؤال" value="1" min="1"
+                        max="100">
                 </div>
-                
+
                 <h4>خيارات الإجابة:</h4>
                 <div id="mcq-options" class="options-grid">
                     <div class="form-group">
@@ -699,7 +717,7 @@
                         <input type="text" id="option4" placeholder="أدخل الخيار الرابع">
                     </div>
                 </div>
-                
+
                 <div class="form-group" id="mcq-correct-container">
                     <label for="correct-option">الإجابة الصحيحة:</label>
                     <select id="correct-option">
@@ -709,7 +727,7 @@
                         <option value="3">الخيار الرابع</option>
                     </select>
                 </div>
-                
+
                 <!-- حقل خاص بسؤال صح/خطأ -->
                 <div class="form-group" id="tf-correct-container" style="display: none;">
                     <label for="tf-correct">الإجابة الصحيحة (لسؤال صح/خطأ):</label>
@@ -718,13 +736,13 @@
                         <option value="1">خطأ</option>
                     </select>
                 </div>
-                
+
                 <div class="center-buttons">
                     <button id="add-question" class="btn-success">إضافة السؤال</button>
                     <button id="clear-form" class="btn-warning">مسح النموذج</button>
                 </div>
             </div>
-            
+
             <div class="form-section">
                 <h3>الأسئلة المضافة (عدد الأسئلة: <span id="questions-count">0</span>)</h3>
                 <div id="questions-list">
@@ -732,7 +750,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- تبويب معاينة الأسئلة -->
         <div id="preview" class="tab-content">
             <div class="form-section">
@@ -742,7 +760,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- تبويب تصدير الاختبار -->
         <div id="export" class="tab-content">
             <div class="form-section">
@@ -758,7 +776,7 @@
                         <input type="text" id="export-subject" placeholder="أدخل اسم المادة">
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="export-teacher">اسم المعلم:</label>
@@ -769,7 +787,7 @@
                         <input type="number" id="export-time" placeholder="مدة الاختبار" value="60" min="1" max="180">
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="export-total-score">الدرجة الكلية:</label>
@@ -780,7 +798,7 @@
                         <input type="text" id="export-filename" placeholder="أدخل اسم الملف">
                     </div>
                 </div>
-                
+
                 <div class="form-section" style="margin-top: 10px; background: #fff;">
                     <h3>إعدادات عرض الأسئلة</h3>
                     <div class="form-row">
@@ -804,11 +822,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="center-buttons">
                     <button id="save-file-direct" class="btn-success">حفظ الاختبار مباشرة</button>
                 </div>
-                
+
                 <!-- تم إخفاء كود الاختبار والمعاينة لتبسيط الواجهة -->
                 <div id="export-code" style="display: none;"></div>
 
@@ -824,51 +842,51 @@
     <script>
         // بيانات التطبيق
         let questions = [];
-        
+
         // تهيئة التطبيق
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initializeApp();
         });
-        
+
         function initializeApp() {
             try {
                 // تحميل الأسئلة المحفوظة
                 loadQuestionsFromStorage();
-                
+
                 // إعداد نظام التبويبات
                 setupTabs();
-                
+
                 // إعداد المستمعين للأحداث
                 setupEventListeners();
-                
+
                 // تحديث عدد الأسئلة
                 updateQuestionsCount();
             } catch (error) {
                 console.error('خطأ في تهيئة التطبيق:', error);
             }
         }
-        
+
         function setupTabs() {
             const tabs = document.querySelectorAll('.tab');
             if (tabs.length === 0) {
                 console.error('لم يتم العثور على التبويبات');
                 return;
             }
-            
+
             tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
+                tab.addEventListener('click', function () {
                     const tabId = this.getAttribute('data-tab');
                     if (!tabId) {
                         console.error('التبويب لا يحتوي على data-tab');
                         return;
                     }
-                    
+
                     // إزالة النشاط من جميع التبويبات
                     tabs.forEach(t => t.classList.remove('active'));
                     document.querySelectorAll('.tab-content').forEach(content => {
                         content.classList.remove('active');
                     });
-                    
+
                     // إضافة النشاط للتبويب المحدد
                     this.classList.add('active');
                     const targetContent = document.getElementById(tabId);
@@ -877,12 +895,12 @@
                     } else {
                         console.error('لم يتم العثور على محتوى التبويب:', tabId);
                     }
-                    
+
                     // تحديث المعاينة إذا كان التبويب هو معاينة الأسئلة
                     if (tabId === 'preview') {
                         displayQuestionsPreview();
                     }
-                    
+
                     // تحديث التصدير إذا كان التبويب هو تصدير الاختبار
                     if (tabId === 'export') {
                         updateExportFields();
@@ -890,41 +908,41 @@
                 });
             });
         }
-        
+
         function setupEventListeners() {
             // زر إضافة سؤال
             const addBtn = document.getElementById('add-question');
             if (addBtn) {
                 addBtn.addEventListener('click', addNewQuestion);
             }
-            
+
             // زر مسح النموذج
             const clearBtn = document.getElementById('clear-form');
             if (clearBtn) {
                 clearBtn.addEventListener('click', clearQuestionForm);
             }
-            
+
             // أزرار التصدير
             const saveDirectBtn = document.getElementById('save-file-direct');
             if (saveDirectBtn) {
                 saveDirectBtn.addEventListener('click', saveFileDirect);
             }
-            
+
             // إدخال تلقائي للبيانات في نموذج التصدير
-            document.getElementById('export-title').addEventListener('input', function() {
+            document.getElementById('export-title').addEventListener('input', function () {
                 const title = this.value.trim();
                 if (title && !document.getElementById('export-filename').value) {
                     document.getElementById('export-filename').value = title.replace(/\s+/g, '_') + '.html';
                 }
             });
-            
+
             // تغيير واجهة النموذج حسب نوع السؤال
-            document.getElementById('question-type').addEventListener('change', function() {
+            document.getElementById('question-type').addEventListener('change', function () {
                 const type = this.value;
                 const mcqOptions = document.getElementById('mcq-options');
                 const mcqCorrect = document.getElementById('mcq-correct-container');
                 const tfCorrect = document.getElementById('tf-correct-container');
-                
+
                 if (type === 'tf') {
                     // إخفاء خيارات الاختيار المتعدد وإظهار صح/خطأ
                     mcqOptions.style.display = 'none';
@@ -939,14 +957,14 @@
             });
 
             // كلمة سر (اختصار): Alt + 8
-            document.addEventListener('keydown', function(event) {
+            document.addEventListener('keydown', function (event) {
                 if (event.altKey && (event.key === '8' || event.keyCode === 56)) {
                     event.preventDefault();
                     alert('لمزيد من المعلومات التواصل مع أبو ابراهيم');
                 }
             });
         }
-        
+
         function showAlert(containerId, message, type) {
             const container = document.getElementById(containerId);
             if (!container) {
@@ -954,14 +972,14 @@
                 alert(message); // استخدام alert كبديل
                 return;
             }
-            
+
             const alertDiv = document.createElement('div');
             alertDiv.className = `alert alert-${type}`;
             alertDiv.textContent = message;
-            
+
             container.innerHTML = '';
             container.appendChild(alertDiv);
-            
+
             // إزالة التنبيه تلقائياً بعد 5 ثواني
             setTimeout(() => {
                 if (alertDiv.parentNode) {
@@ -969,51 +987,51 @@
                 }
             }, 5000);
         }
-        
+
         function addNewQuestion() {
             try {
                 // الحصول على البيانات من النموذج
                 const questionData = getQuestionFormData();
-                
+
                 // التحقق من صحة البيانات
                 if (!validateQuestionData(questionData)) {
                     return;
                 }
-                
+
                 // إضافة السؤال إلى القائمة
                 questions.push(questionData);
-                
+
                 // حفظ الأسئلة في التخزين المحلي
                 saveQuestionsToStorage();
-                
+
                 // تحديث واجهة المستخدم
                 displayQuestionsList();
                 clearQuestionForm();
                 updateQuestionsCount();
-                
+
                 showAlert('form-alerts', 'تم إضافة السؤال بنجاح!', 'success');
             } catch (error) {
                 console.error('خطأ في إضافة السؤال:', error);
                 showAlert('form-alerts', 'حدث خطأ أثناء إضافة السؤال. يرجى المحاولة مرة أخرى.', 'error');
             }
         }
-        
+
         function getQuestionFormData() {
             const questionTextEl = document.getElementById('question-text');
             const questionTypeEl = document.getElementById('question-type');
             const questionPointsEl = document.getElementById('question-points');
-            
+
             if (!questionTextEl || !questionTypeEl || !questionPointsEl) {
                 throw new Error('عناصر النموذج غير موجودة');
             }
-            
+
             const questionText = questionTextEl.value.trim();
             const questionType = questionTypeEl.value;
             const questionPoints = parseInt(questionPointsEl.value) || 1;
-            
+
             let options = [];
             let correctOptionIndex = 0;
-            
+
             if (questionType === 'tf') {
                 // سؤال صح/خطأ: خيارات ثابتة
                 const tfCorrectEl = document.getElementById('tf-correct');
@@ -1029,11 +1047,11 @@
                 const option3El = document.getElementById('option3');
                 const option4El = document.getElementById('option4');
                 const correctOptionEl = document.getElementById('correct-option');
-                
+
                 if (!option1El || !option2El || !option3El || !option4El || !correctOptionEl) {
                     throw new Error('عناصر الخيارات غير موجودة');
                 }
-                
+
                 const option1 = option1El.value.trim();
                 const option2 = option2El.value.trim();
                 const option3 = option3El.value.trim();
@@ -1041,7 +1059,7 @@
                 options = [option1, option2, option3, option4];
                 correctOptionIndex = parseInt(correctOptionEl.value) || 0;
             }
-            
+
             return {
                 text: questionText,
                 type: questionType,
@@ -1050,13 +1068,13 @@
                 points: questionPoints
             };
         }
-        
+
         function validateQuestionData(data) {
             if (!data.text) {
                 showAlert('form-alerts', 'يرجى إدخال نص السؤال', 'error');
                 return false;
             }
-            
+
             // في حالة سؤال صح/خطأ لا نحتاج للتحقق من إدخال الخيارات لأنها ثابتة
             if (data.type !== 'tf') {
                 // التحقق من أن هناك على الأقل خيارين مملوئين
@@ -1065,35 +1083,35 @@
                     showAlert('form-alerts', 'يرجى إدخال على الأقل خيارين للإجابة', 'error');
                     return false;
                 }
-                
+
                 // التحقق من أن الخيار الصحيح مملوء
                 if (!data.options[data.correctAnswer] || data.options[data.correctAnswer].trim() === '') {
                     showAlert('form-alerts', 'الخيار المحدد كإجابة صحيحة فارغ', 'error');
                     return false;
                 }
             }
-            
+
             return true;
         }
-        
+
         function displayQuestionsList() {
             const questionsList = document.getElementById('questions-list');
             if (!questionsList) {
                 console.error('عنصر questions-list غير موجود');
                 return;
             }
-            
+
             if (questions.length === 0) {
                 questionsList.innerHTML = '<div class="empty-state"><i>📝</i><p>لم تتم إضافة أي أسئلة بعد</p></div>';
                 return;
             }
-            
+
             let html = '';
             questions.forEach((question, index) => {
                 let optionsHTML = '';
                 question.options.forEach((option, optIndex) => {
                     if (option.trim() === '') return;
-                    
+
                     const isCorrect = optIndex === question.correctAnswer;
                     optionsHTML += `
                         <div class="quiz-option ${isCorrect ? 'correct-option' : ''}">
@@ -1101,9 +1119,9 @@
                         </div>
                     `;
                 });
-                
+
                 const typeLabel = question.type === 'tf' ? ' (صح / خطأ)' : '';
-                
+
                 html += `
                     <div class="question-card">
                         <div class="question-header">
@@ -1120,10 +1138,10 @@
                     </div>
                 `;
             });
-            
+
             questionsList.innerHTML = html;
         }
-        
+
         function clearQuestionForm() {
             document.getElementById('question-text').value = '';
             document.getElementById('question-points').value = '1';
@@ -1134,9 +1152,9 @@
             document.getElementById('correct-option').value = '0';
             document.getElementById('form-alerts').innerHTML = '';
         }
-        
+
         // جعل الدوال متاحة في النطاق العام للاستخدام في onclick
-        window.deleteQuestion = function(index) {
+        window.deleteQuestion = function (index) {
             if (confirm('هل أنت متأكد من حذف هذا السؤال؟')) {
                 questions.splice(index, 1);
                 saveQuestionsToStorage();
@@ -1144,20 +1162,20 @@
                 updateQuestionsCount();
             }
         };
-        
-        window.editQuestion = function(index) {
+
+        window.editQuestion = function (index) {
             const question = questions[index];
-            
+
             // تعبئة النموذج ببيانات السؤال
             document.getElementById('question-text').value = question.text;
             document.getElementById('question-type').value = question.type || 'mcq';
             document.getElementById('question-points').value = question.points;
-            
+
             // تحديث الواجهة حسب نوع السؤال
             const typeSelect = document.getElementById('question-type');
             const event = new Event('change');
             typeSelect.dispatchEvent(event);
-            
+
             if ((question.type || 'mcq') === 'tf') {
                 // سؤال صح/خطأ
                 document.getElementById('tf-correct').value = String(question.correctAnswer || 0);
@@ -1176,43 +1194,43 @@
                 document.getElementById('correct-option').value = String(question.correctAnswer || 0);
                 document.getElementById('tf-correct').value = '0';
             }
-            
+
             // حذف السؤال القديم
             questions.splice(index, 1);
             saveQuestionsToStorage();
             displayQuestionsList();
             updateQuestionsCount();
-            
+
             // الانتقال إلى تبويب إنشاء الأسئلة
             switchToTab('create');
-            
+
             showAlert('form-alerts', 'يمكنك الآن تعديل السؤال', 'success');
         };
-        
+
         function switchToTab(tabName) {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
+
             document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
             document.getElementById(tabName).classList.add('active');
         }
-        
+
         function displayQuestionsPreview() {
             const previewContainer = document.getElementById('questions-preview');
             document.getElementById('preview-questions-count').textContent = questions.length;
-            
+
             if (questions.length === 0) {
                 previewContainer.innerHTML = '<div class="empty-state"><i>📝</i><p>لم تتم إضافة أي أسئلة بعد</p></div>';
                 return;
             }
-            
+
             let html = '<div class="questions-grid">';
-            
+
             questions.forEach((question, index) => {
                 let optionsHTML = '';
                 question.options.forEach((option, optIndex) => {
                     if (option.trim() === '') return;
-                    
+
                     const isCorrect = optIndex === question.correctAnswer;
                     optionsHTML += `
                         <div class="quiz-option ${isCorrect ? 'correct-option' : ''}">
@@ -1220,9 +1238,9 @@
                         </div>
                     `;
                 });
-                
+
                 const typeLabel = question.type === 'tf' ? ' (صح / خطأ)' : '';
-                
+
                 html += `
                     <div class="preview-card">
                         <h4>السؤال ${index + 1}${typeLabel}</h4>
@@ -1236,49 +1254,49 @@
                     </div>
                 `;
             });
-            
+
             html += '</div>';
             previewContainer.innerHTML = html;
         }
-        
+
         function updateQuestionsCount() {
             document.getElementById('questions-count').textContent = questions.length;
             document.getElementById('preview-questions-count').textContent = questions.length;
         }
-        
+
         function updateExportFields() {
             // تحديث الدرجة الكلية تلقائياً
             const totalScore = calculateTotalScore();
             document.getElementById('export-total-score').value = totalScore;
-            
+
             // اقتراح عنوان افتراضي
             if (!document.getElementById('export-title').value) {
                 document.getElementById('export-title').value = 'معلوماتية';
             }
         }
-        
+
         function generateExportCode() {
             if (questions.length === 0) {
                 showAlert('export-alerts', 'لا توجد أسئلة لتصديرها', 'error');
                 return;
             }
-            
+
             const title = document.getElementById('export-title').value || 'حدد اسم الاختبار';
             const subject = document.getElementById('export-subject').value || 'حدد اسم المادة';
             const teacher = document.getElementById('export-teacher').value || 'حدد اسم المعلم';
             const totalScore = document.getElementById('export-total-score').value || calculateTotalScore();
             const time = document.getElementById('export-time').value || '60';
-            
+
             const shuffleQuestionsSetting = document.getElementById('shuffle-questions').checked;
             const shuffleOptionsSetting = document.getElementById('shuffle-options').checked;
             const preventBackSetting = document.getElementById('prevent-back').checked;
-            
+
             let questionsCode = '';
             questions.forEach((question, index) => {
                 // تصفية الخيارات الفارغة
                 const filteredOptions = question.options.filter(opt => opt.trim() !== '');
                 const qType = question.type || 'mcq';
-                
+
                 questionsCode += `
         {
             text: "${question.text.replace(/"/g, '\\"')}",
@@ -1288,13 +1306,13 @@
             points: ${question.points}
         }${index < questions.length - 1 ? ',' : ''}`;
             });
-            
+
             const exportCode = generateExportCodeContent(title, subject, teacher, totalScore, time, shuffleQuestionsSetting, shuffleOptionsSetting, preventBackSetting, questionsCode);
-            
+
             document.getElementById('export-code').textContent = exportCode;
             showAlert('export-alerts', 'تم توليد كود الاختبار بنجاح!', 'success');
         }
-        
+
         function generateExportCodeContent(title, subject, teacher, totalScore, time, shuffleQuestionsSetting, shuffleOptionsSetting, preventBackSetting, questionsCode) {
             return `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -1848,22 +1866,22 @@
 </body>
 </html>`;
         }
-        
+
         function copyExportCode() {
             const codeText = document.getElementById('export-code').textContent;
             if (!codeText || codeText.trim() === '' || codeText.includes('سيتم عرض كود الاختبار هنا')) {
                 showAlert('export-alerts', 'يرجى توليد كود الاختبار أولاً!', 'error');
                 return;
             }
-            
-            navigator.clipboard.writeText(codeText).then(function() {
+
+            navigator.clipboard.writeText(codeText).then(function () {
                 showAlert('export-alerts', 'تم نسخ كود الاختبار إلى الحافظة!', 'success');
-            }, function(err) {
+            }, function (err) {
                 console.error('فشل في نسخ النص: ', err);
                 showAlert('export-alerts', 'فشل في نسخ الكود. يرجى المحاولة مرة أخرى.', 'error');
             });
         }
-        
+
         function saveQuizFile() {
             // توليد الكود تلقائياً إذا لم يكن موجوداً
             const codeText = document.getElementById('export-code').textContent;
@@ -1875,7 +1893,7 @@
                 }, 500);
                 return;
             }
-            
+
             let filename = document.getElementById('export-filename').value.trim();
             if (!filename) {
                 const testTitle = document.getElementById('export-title').value || '';
@@ -1885,47 +1903,47 @@
                     filename += '.html';
                 }
             }
-            
+
             const blob = new Blob([codeText], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
-            
+
             const a = document.createElement('a');
             a.href = url;
             a.download = filename;
             document.body.appendChild(a);
             a.click();
-            
+
             setTimeout(() => {
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
             }, 100);
-            
+
             showAlert('export-alerts', 'تم حفظ ملف الاختبار باسم: ' + filename, 'success');
         }
-        
+
         function saveFileDirect() {
             // التحقق من وجود أسئلة
             if (questions.length === 0) {
                 showAlert('export-alerts', 'لا توجد أسئلة لتصديرها', 'error');
                 return;
             }
-            
+
             // توليد الكود مباشرة  عرضه
             const title = document.getElementById('export-title').value || '';
             const subject = document.getElementById('export-subject').value || '';
             const teacher = document.getElementById('export-teacher').value || 'المعلم';
             const totalScore = document.getElementById('export-total-score').value || calculateTotalScore();
             const time = document.getElementById('export-time').value || '60';
-            
+
             const shuffleQuestionsSetting = document.getElementById('shuffle-questions').checked;
             const shuffleOptionsSetting = document.getElementById('shuffle-options').checked;
             const preventBackSetting = document.getElementById('prevent-back').checked;
-            
+
             let questionsCode = '';
             questions.forEach((question, index) => {
                 const filteredOptions = question.options.filter(opt => opt.trim() !== '');
                 const qType = question.type || 'mcq';
-                
+
                 questionsCode += `
         {
             text: "${question.text.replace(/"/g, '\\"')}",
@@ -1935,10 +1953,10 @@
             points: ${question.points}
         }${index < questions.length - 1 ? ',' : ''}`;
             });
-            
+
             // استخدام نفس كود التوليد من generateExportCode
             const exportCode = generateExportCodeContent(title, subject, teacher, totalScore, time, shuffleQuestionsSetting, shuffleOptionsSetting, preventBackSetting, questionsCode);
-            
+
             // حفظ الملف مباشرة
             let filename = document.getElementById('export-filename').value.trim();
             if (!filename) {
@@ -1948,32 +1966,32 @@
                     filename += '.html';
                 }
             }
-            
+
             const blob = new Blob([exportCode], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
-            
+
             const a = document.createElement('a');
             a.href = url;
             a.download = filename;
             document.body.appendChild(a);
             a.click();
-            
+
             setTimeout(() => {
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
             }, 100);
-            
+
             showAlert('export-alerts', 'تم حفظ ملف الاختبار مباشرة باسم: ' + filename, 'success');
         }
-        
+
         function calculateTotalScore() {
             return questions.reduce((total, question) => total + question.points, 0);
         }
-        
+
         function saveQuestionsToStorage() {
             localStorage.setItem('ictQuizQuestions', JSON.stringify(questions));
         }
-        
+
         function loadQuestionsFromStorage() {
             const savedQuestions = localStorage.getItem('ictQuizQuestions');
             if (savedQuestions) {
@@ -1988,4 +2006,5 @@
         }
     </script>
 </body>
+
 </html>
